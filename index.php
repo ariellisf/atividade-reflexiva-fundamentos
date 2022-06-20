@@ -4,6 +4,9 @@
     <title>Gerador de Currículos</title>
     <meta charset="utf-8" />
     <meta description="Atividade Reflexiva - Fundamentos da Programação" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
