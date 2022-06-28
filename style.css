@@ -1,12 +1,17 @@
 body {
   background: #f2effb;
   font-family: "Montserrat", sans-serif;
+  padding: 0 20px;
 }
 
 h1 {
   text-align: center;
   color: #380b61;
   border: 8px groove #8904b1;
+}
+
+h2 {
+  text-align: center;
 }
 
 .form-group {
@@ -27,6 +32,8 @@ input {
   width: 250px;
   font-size: 16px;
   text-align: center;
+  align-items: center;
+  justify-content: space-between;
 }
 
 button {

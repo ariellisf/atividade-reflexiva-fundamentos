@@ -8,6 +8,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src= "app.js"></script>
   </head>
 
   <body>
@@ -55,79 +57,29 @@
 
         <div class="profissional">
           <h2>Dados Profissionais</h2>
-          <div class="form-group">
-            <label for="empresa">Nome da Empresa</label>
-            <input
-              type="text"
-              id="empresa"
-              name="empresa"
-              placeholder="Nome da Empresa"
-            />
-            <label for="cargo">Cargo</label>
-            <input
-              type="text"
-              id="cargo"
-              name="cargo"
-              placeholder="Cargo Ocupado"
-            />
-            <label for="periodoInicial">Período Inicial</label>
-            <input type="date" id="periodoInicial" name="periodoInicial" />
-            <label for="periodoFInal">Período Final</label>
-            <input type="text" id="periodoFinal" name="periodoFinal"
-            placeholder="<?php echo date("d/m/Y"); ?>">
+
+          <div id="profissionalLista"> 
           </div>
 
-          <button>Adicionar Empresa</button>
+          <button type="button" id="adicionarEmpresa">Adicionar Empresa</button>
         </div>
 
         <div class="escolar">
           <h2>Dados Acadêmicos</h2>
-          <div class="form-group">
-            <label for="instituicao">Nome da Instituição</label>
-            <input
-              type="text"
-              id="instituicao"
-              name="instituicao"
-              placeholder="Nome da Instituição"
-            />
-            <label for="curso">Curso</label>
-            <input
-              type="text"
-              id="curso"
-              name="curso"
-              placeholder="Nome do Curso"
-            />
-            <label for="dataInicio">Data de Início</label>
-            <input type="date" id="dataInicio" name="dataInicio" />
-            <label for="dataConclusao">Data de Conclusão</label>
-            <input type="date" id="dataConclusao" name="dataConclusao" />
+
+          <div id="academicoLista"> 
           </div>
 
-          <button>Adicionar Empresa</button>
+          <button type="button" id="adicionarAcademico" >Adicionar Dados Academicos</button>
         </div>
 
         <div class="referencia">
           <h2>Referências Pessoais</h2>
-          <div class="form-group">
-            <label for="nomeReferencia">Nome da Referência</label>
-            <input
-              type="text"
-              id="nomeReferencia"
-              name="nomeReferencia"
-              placeholder="Nome da Referência"
-            />
-            <label for="contato">Contato</label>
-            <input
-              type="tel"
-              id="contato"
-              name="contato"
-              placeholder="(xx)xxxxx-xxx"
-            />
 
-
+          <div id="referenciaLista"> 
           </div>
 
-          <button>Adicionar Referência</button>
+          <button type="button" id="adicionarReferencia">Adicionar Referência</button>
         </div>
 
         <input class="enviar" type="submit" value="Enviar formulário" />
