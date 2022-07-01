@@ -1,7 +1,13 @@
 body {
   background: #f2effb;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 0 20px;
+}
+
+.conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
@@ -12,36 +18,74 @@ h1 {
 
 h2 {
   text-align: center;
+  color: #380b61;
 }
 
-.form-group {
+.grupo-campos {
   display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
-.form-group label {
-  margin-right: 5px;
-  margin-left: 5px;
+.grupo-campos label {
   font-weight: 700;
+  margin-bottom: 4px;
+  color: #380b61;
+  font-size: 14px;
 }
 
-.pessoais .form-group {
-  margin-bottom: 10px;
+.grupo-campos input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 2px solid rgba(56, 11, 97, 0.4);
+  outline: none;
+  font-size: 14px;
+  background: rgba(56, 11, 97, 0.01);
+  color: rgba(56, 11, 97, 1);
 }
 
-input {
-  width: 250px;
-  font-size: 16px;
-  text-align: center;
-  align-items: center;
+.grupo-campos input::placeholder {
+  color: rgba(56, 11, 97, 0.4);
+}
+
+.grupo-campos input[type="date"] {
+  padding: 7px;
+}
+
+.grupo-campos input:focus {
+  border-color: rgba(56, 11, 97, 1);
+}
+
+.grupo-horizontal {
+  display: flex;
+  gap: 16px;
   justify-content: space-between;
 }
 
-button {
-  font-size: 16px;
-  color: #240b3b;
-  font-weight: bold;
-  margin-left: 15px;
-  margin-top: 10px;
+.lista-item {
+  border-bottom: 2px dashed rgba(56, 11, 97, 0.6);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.lista-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.lista-cabecalho button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: rgba(56, 11, 97, 0.8);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 button:hover {
@@ -51,10 +95,14 @@ button:hover {
 
 .enviar {
   font-size: 16px;
-  color: #240b3b;
+  color: white;
   font-weight: bold;
-  margin-top: 30px;
-  margin-left: 100px;
+  font-size: 16px;
+  background: #8904b1;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px 10px;
 }
 
 .enviar:hover {

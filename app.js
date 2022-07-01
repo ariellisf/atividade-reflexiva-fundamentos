@@ -1,66 +1,105 @@
 $(document).ready(function () {
-  var profissionalItem = "";
-  profissionalItem += '<div class="form-group">';
-  profissionalItem += '<label for="empresa">Nome da Empresa</label>';
-  profissionalItem +=
-    '<input type="text" id="empresa" name="empresa" placeholder="Nome da Empresa"/>';
-  profissionalItem += '<label for="cargo">Cargo</label>';
-  profissionalItem +=
-    '<input type="text" id="cargo" name="cargo" placeholder="Cargo Ocupado"/>';
-  profissionalItem += '<label for="periodoInicial">Período Inicial</label>';
-  profissionalItem +=
-    '<input type="date" id="periodoInicial" name="periodoInicial" />';
-  profissionalItem += '<label for="periodoFInal">Período Final</label>';
-  profissionalItem +=
-    '<input type="date" id="periodoFinal" name="periodoFinal" />';
-  profissionalItem += "</div>";
+  const dadosProfissionaisLista = $("#dadosProfissionaisLista");
+  const dadosAcademicosLista = $("#dadosAcademicosLista");
+  const dadosReferenciasLista = $("#dadosReferenciasLista");
 
-  var profissionalLista = $("#profissionalLista");
+  dadosProfissionaisLista.append(dadosProfessionaisItem());
+  dadosAcademicosLista.append(dadosAcademicosItem());
+  dadosReferenciasLista.append(dadosReferenciasItem());
 
-  profissionalLista.append(profissionalItem);
-
-  $("#adicionarEmpresa").on("click", function (event) {
-    profissionalLista.append(profissionalItem);
+  $("#adicionarDadosProfissionais").on("click", function () {
+    dadosProfissionaisLista.append(dadosProfessionaisItem());
   });
 
-  var academicoItem = "";
-  academicoItem += '<div class="form-group">';
-  academicoItem += '<label for="instituicao">Nome da Instituição</label>';
-  academicoItem +=
-    '<input type="text" id="instituicao" name="instituicao" placeholder="Nome da Instituição"/>';
-  academicoItem += '<label for="curso">Curso</label>';
-  academicoItem +=
-    '<input type="text" id="curso" name="curso" placeholder="Nome do Curso"/>';
-  academicoItem += '<label for="dataInicio">Data de Início</label>';
-  academicoItem += '<input type="date" id="dataInicio" name="dataInicio" />';
-  academicoItem += '<label for="dataConclusao">Data de Conclusão</label>';
-  academicoItem +=
-    '<input type="date" id="dataConclusao" name="dataConclusao" />';
-  academicoItem += "</div>";
-
-  var academicoLista = $("#academicoLista");
-
-  academicoLista.append(academicoItem);
-
-  $("#adicionarAcademico").on("click", function (event) {
-    academicoLista.append(academicoItem);
+  $("#adicionarDadosAcademicos").on("click", function () {
+    dadosAcademicosLista.append(dadosAcademicosItem());
   });
 
-  var referenciaItem = "";
-  referenciaItem += '<div class="form-group">';
-  referenciaItem += '<label for="nomeReferencia">Nome da Referência</label>';
-  referenciaItem +=
-    '<input type="text" id="nomeReferencia" name="nomeReferencia" placeholder="Nome da Referência"/>';
-  referenciaItem += '<label for="contato">Contato</label>';
-  referenciaItem +=
-    '<input type="tel" id="contato" name="contato" placeholder="(xx)xxxxx-xxx"/>';
-  referenciaItem += "</div>";
-
-  var referenciaLista = $("#referenciaLista");
-
-  referenciaLista.append(referenciaItem);
-
-  $("#adicionarReferencia").on("click", function (event) {
-    referenciaLista.append(referenciaItem);
+  $("#adicionarDadosReferencias").on("click", function () {
+    dadosReferenciasLista.append(dadosReferenciasItem());
   });
+
+  function dadosProfessionaisItem() {
+    const posicao = $(".professional-item").length;
+
+    return `
+      <div class="lista-item professional-item">
+        <div class="grupo-horizontal">
+          <div class="grupo-campos">
+            <label for="dadosProfissionais[${posicao}][empresa]">Nome da Empresa</label>
+            <input type="text" name="dadosProfissionais[${posicao}][empresa]" placeholder="Nome da Empresa"/>
+          </div>
+
+          <div class="grupo-campos">
+            <label for="dadosProfissionais[${posicao}][cargo]">Cargo</label>
+            <input type="text" name="dadosProfissionais[${posicao}][cargo]" placeholder="Cargo Ocupado"/>
+          </div>
+        </div>
+
+        <div class="grupo-horizontal">
+          <div class="grupo-campos">
+            <label for="dadosProfissionais[${posicao}][periodoInicial]">Período Inicial</label>
+            <input type="date" name="dadosProfissionais[${posicao}][periodoInicial]" />
+          </div>
+          
+          <div class="grupo-campos">
+            <label for="dadosProfissionais[${posicao}][periodoFinal]">Período Final</label>
+            <input type="date" name="dadosProfissionais[${posicao}][periodoFinal]" />
+          </div>          
+        </div>
+      </div>
+    `;
+  }
+
+  function dadosAcademicosItem() {
+    const posicao = $(".dados-academicos-item").length;
+
+    return `
+      <div class="lista-item dados-academicos-item">
+        <div class="grupo-horizontal">
+          <div class="grupo-campos">
+            <label for="dadosAcademicos[${posicao}][instituicao]">Nome da Instituição</label>
+            <input type="text" name="dadosAcademicos[${posicao}][instituicao]" placeholder="Nome da Instituição"/>
+          </div>
+
+          <div class="grupo-campos">
+            <label for="dadosAcademicos[${posicao}][curso]">Curso</label>
+            <input type="text" name="dadosAcademicos[${posicao}][curso]" placeholder="Nome do Curso"/>
+          </div>
+        </div>
+
+        <div class="grupo-horizontal">
+          <div class="grupo-campos">
+            <label for="dadosAcademicos[${posicao}][dataInicio]">Data de Início</label>
+            <input type="date" name="dadosAcademicos[${posicao}][dataInicio]" />
+          </div>
+
+          <div class="grupo-campos">
+            <label for="dadosAcademicos[${posicao}][dataConclusao]">Data de Conclusão</label>
+            <input type="date" name="dadosAcademicos[${posicao}][dataConclusao]" />
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function dadosReferenciasItem() {
+    const posicao = $(".referencias-item").length;
+
+    return `
+      <div class="lista-item referencias-item">
+        <div class="grupo-horizontal">
+          <div class="grupo-campos">
+            <label for="dadosReferencias[${posicao}][nome]">Nome da Referência</label>
+            <input type="text" name="dadosReferencias[${posicao}][nome]" placeholder="Nome da Referência"/>
+          </div>
+
+          <div class="grupo-campos">
+            <label for="dadosReferencias[${posicao}][contato]">Contato</label>
+            <input type="tel" name="dadosReferencias[${posicao}][contato]" placeholder="(xx)xxxxx-xxx"/>
+          </div>
+        </div>
+      </div>
+    `;
+  }
 });
